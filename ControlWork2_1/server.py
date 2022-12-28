@@ -41,10 +41,8 @@ class Client(threading.Thread):
                     if len(tasks) != 0:
                         try:
                             spl = data[6:]
-                            print(spl)
                             task_id = int(data[6:spl.find(' ') + 6])
                             new_task = data[spl.find(' ') + 7:]
-                            print('new', new_task)
                             tasks.remove(tasks[task_id])
                             tasks.insert(task_id, new_task)
                             print('Запись изменена')
